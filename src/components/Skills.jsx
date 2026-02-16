@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaJs, FaReact, FaNodeJs, FaPython, FaDatabase,FaJava } from "react-icons/fa";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { RiNextjsFill,RiTailwindCssFill } from "react-icons/ri";
-import { CgFigma } from "react-icons/cg";
+import { SiExpress } from "react-icons/si";
 
 export default function Skills() {
   const [skills] = useState([
@@ -16,27 +16,33 @@ export default function Skills() {
     { id: 7, name: "Postgresql", icon: <BiLogoPostgresql size={50} /> },
     { id: 8, name: "Next.js", icon: <RiNextjsFill size={50} /> },
     { id: 9, name: "Tailwind", icon: <RiTailwindCssFill size={50} /> },
-    { id: 10, name: "Figma", icon: <CgFigma size={50} /> },
+    { id: 10, name: "Express.js", icon: <SiExpress size={50} /> },
   ]);
 
   const [experiences] = useState([
     {
       id: 1,
-      company: "Google",
-      role: "Lead Software Engineer",
-      period: "Nov 2019 - Present",
-      description:
-        "Developed innovative solutions for Google's core search algorithms, optimizing search accuracy and user experience. Developed innovative solutions for Google's core search algorithms, optimizing search accuracy and user experience. Developed innovative solutions for Google's core search algorithms, optimizing search accuracy and user experience. Developed innovative solutions for Google's core search algorithms, optimizing search accuracy and user experience.",
-      logo: "/assets/google.svg",
+      company: "Don Bosco Institute of Technology – Mumbai, India",
+      role: "IT Department Website Coordinator",
+      period: "Jul 2025 – Present",
+      responsibilities: [
+        "Executed weekly content updates and performed bi-weekly functionality audits for the official IT department website",
+        "Streamlined faculty collaboration processes, reducing content approval time by 40%",
+        "Boosted website performance through systematic optimization, achieving 25% faster load times",
+      ],
+      logo: "", // add a logo path in /public/assets if you have one
     },
     {
       id: 2,
-      company: "Youtube",
-      role: "Software Engineer",
-      period: "Jan 2017 - Oct 2019",
-      description:
-        "At Youtube, I served as a  Software Engineer, focusing on the design and implementation of backend systems for the social media giant's dynamic platform. Working on projects that involved large-scale data processing and user engagement features, I leveraged my expertise to ensure seamless functionality and scalability.",
-      logo: "/assets/youtube.svg",
+      company: "L&T and Creast Collaboration – Mumbai, India",
+      role: "Python Instructor Intern",
+      period: "Aug 2024 – Feb 2025",
+      responsibilities: [
+        "Instructed 50+ students in Python fundamentals, OOP concepts, and hands-on project development",
+        "Orchestrated 3 coding exhibitions and competitions, increasing student participation by 60%",
+        "Designed curriculum modules and generated bi-weekly progress reports, improving learning retention by 35%",
+      ],
+      logo: "",
     },
   ]);
 
@@ -103,7 +109,7 @@ export default function Skills() {
             >
               <div className="flex justify-between flex-col items-start lg:flex-row lg:items-center">
                 <div className="flex items-center gap-5">
-                  <img className="w-7" src={exp.logo} alt="" />
+                  {exp.logo && <img className="w-7" src={exp.logo} alt={`${exp.company} logo`} />}
                   <h2 className="font-semibold text-white text-lg lg:text-xl">
                     {exp.role} at {exp.company}
                   </h2>
@@ -112,9 +118,18 @@ export default function Skills() {
                   {exp.period}
                 </span>
               </div>
-              <p className="text-[#D4D4D8] mt-6 text-sm/6 lg:text-base font-light">
-                {exp.description}
-              </p>
+
+              {exp.responsibilities ? (
+                <ul className="list-disc ml-6 mt-6 text-[#D4D4D8] text-sm/6 lg:text-base font-light space-y-2">
+                  {exp.responsibilities.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-[#D4D4D8] mt-6 text-sm/6 lg:text-base font-light">
+                  {exp.description}
+                </p>
+              )}
             </motion.div>
           ))}
         </div>

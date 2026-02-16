@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { IoLogoLinkedin, IoLogoTwitter } from "react-icons/io5";
+import { IoLogoLinkedin } from "react-icons/io5";
 import { BiLogoGmail } from "react-icons/bi";
 import { BsGithub } from "react-icons/bs";
 import { TypeAnimation } from "react-type-animation";
@@ -33,7 +33,7 @@ export default function Home() {
             <motion.h2 variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}>
               Hello, <TypeAnimation
                 sequence={[
-                  'I am Sathish Kumar',
+                  'I am Keshav Prajapati',
                   1000,
                   // 'I am a Web Developer',
                   // 1000,
@@ -74,10 +74,17 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 1 }}
           >
-            {[BiLogoGmail, IoLogoLinkedin, IoLogoTwitter, BsGithub].map((Icon, index) => (
+            {[
+              { Icon: BiLogoGmail, href: 'mailto:prajapatikeshav497@gmail.com', label: 'Email' },
+              { Icon: IoLogoLinkedin, href: 'https://www.linkedin.com/in/keshav-prajapati-759ba8314/', label: 'LinkedIn' },
+              { Icon: BsGithub, href: 'https://github.com/kpcode11', label: 'GitHub' },
+            ].map(({ Icon, href, label }, index) => (
               <motion.a
                 key={index}
-                href="#"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
                 className="bg-white p-2 lg:p-3 rounded border-2 border-black"
                 whileHover={{ scale: 1.1, backgroundColor: "#000", color: "#fff" }}
                 whileTap={{ scale: 0.9 }}
