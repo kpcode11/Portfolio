@@ -3,3 +3,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ----------------------------- */
+/* Custom cursor — accessibility + styles
+   - hides native cursor on non-touch devices
+   - preserves native cursor for inputs/buttons
+   - supports `data-cursor` and `.has-custom-cursor-pointer` states
+*/
+:root { --cursor-size: 32px; }
+
+/* hide native cursor while our custom cursor is active */
+html.has-custom-cursor, body.has-custom-cursor { cursor: none !important; }
+
+/* keep native cursor for interactive form controls */
+html.has-custom-cursor input,
+html.has-custom-cursor textarea,
+html.has-custom-cursor select,
+html.has-custom-cursor button,
+html.has-custom-cursor [role="button"],
+html.has-custom-cursor [contenteditable="true"] {
+  cursor: auto !important;
+}
+
+/* the cursor element itself */
+.custom-cursor {
+  width: var(--cursor-size);
+  height: var(--cursor-size);
+  background: #ffffff;
+  border-radius: 9999px;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  will-change: transform, opacity;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  transition: background-color 150ms ease, box-shadow 150ms ease, transform 150ms ease, opacity 150ms ease;
+}
+
+/* pointer-like appearance for links/buttons */
+html.has-custom-cursor-pointer .custom-cursor {
+  background: transparent;
+  border: 1.5px solid #ffffff;
+  box-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .custom-cursor { transition: none !important; }
+}
