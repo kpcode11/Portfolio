@@ -154,7 +154,7 @@ export default function Contact() {
 
               <div className='flex items-center gap-x-2 lg:gap-x-5'>
                 {[
-                  { Icon: BiLogoGmail, href: 'mailto:prajapatikeshav497@gmail.com', label: 'Email' },
+                  { Icon: BiLogoGmail, href: 'https://mail.google.com/mail/?view=cm&fs=1&to=prajapatikeshav497@gmail.com', label: 'Email' },
                   { Icon: IoLogoLinkedin, href: 'https://www.linkedin.com/in/keshav-prajapati-759ba8314/', label: 'LinkedIn' },
                   { Icon: BsGithub, href: 'https://github.com/kpcode11', label: 'GitHub' },
                 ].filter(link => link.href).map(({ Icon, href, label }, index) => (
