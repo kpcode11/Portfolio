@@ -5,17 +5,17 @@ import { motion } from 'framer-motion';
 const projects = [
   {
     id: 1,
-    title: "Crypto Screener Application",
-    description: "A powerful tool for tracking and analyzing cryptocurrency trends in real-time.",
-    image: "/assets/project1.png",
-    link: "#"
+    title: "Farmer Sahayak — Gov Scheme Discovery",
+    description: "MERN full‑stack platform with an AI RAG chatbot to discover government schemes and provide personalized recommendations.",
+    image: "/assets/FarmerSahayak.png",
+    link: "https://farm-scheme-delta.vercel.app/"
   },
   {
     id: 2,
-    title: "Stock Market Dashboard",
-    description: "An interactive dashboard to monitor stock prices and market trends efficiently.",
-    image: "/assets/project1.png",
-    link: "#"
+    title: "LeapQuest — 2D Unity Game",
+    description: "2D platformer built in Unity (C#) with modular systems, A* enemy pathfinding and Android optimizations for smooth 60 FPS gameplay.",
+    image: "/assets/LeapQuest3.png",
+    link: "https://play.google.com/store/apps/details?id=com.Teknack.LeapQuest&pcampaignid=web_share"
   }
 ];
 
