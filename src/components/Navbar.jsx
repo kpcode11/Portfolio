@@ -36,6 +36,14 @@ export default function Navbar() {
         }`}
     >
       <div className="container mx-auto flex justify-between items-center">
+        <motion.button
+          className="lg:hidden text-2xl"
+          onClick={() => setIsOpen(!isOpen)}
+          whileHover={{ scale: 1.2 }}
+        >
+          {isOpen ? <HiX /> : <HiOutlineMenu />}
+        </motion.button>
+
         {/* <motion.img
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -63,30 +71,20 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-x-3 lg:gap-x-5 ml-auto lg:ml-0">
-          <motion.a
-            href="/assets/Keshav Prajapati.pdf"
-            download
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Download resume"
-            className="relative inline-block px-3 py-1.5 lg:px-4 lg:py-2 text-sm lg:text-base font-medium group"
-          >
-            <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
-            <span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
-            <span className="relative text-black group-hover:text-white flex items-center gap-x-2 lg:gap-x-3">
-              Resume <TbDownload className="w-4 h-4" />
-            </span>
-          </motion.a>
-
-          <motion.button
-            className="lg:hidden text-2xl"
-            onClick={() => setIsOpen(!isOpen)}
-            whileHover={{ scale: 1.2 }}
-          >
-            {isOpen ? <HiX /> : <HiOutlineMenu />}
-          </motion.button>
-        </div>
+        <motion.a
+          href="/assets/Keshav Prajapati.pdf"
+          download
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Download resume"
+          className="relative inline-block px-3 py-1.5 lg:px-4 lg:py-2 text-sm lg:text-base font-medium group"
+        >
+          <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+          <span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
+          <span className="relative text-black group-hover:text-white flex items-center gap-x-2 lg:gap-x-3">
+            Resume <TbDownload className="w-4 h-4" />
+          </span>
+        </motion.a>
       </div>
 
       {/* Mobile Menu */}
