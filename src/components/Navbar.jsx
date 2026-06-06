@@ -63,28 +63,30 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <motion.a
-          href="/assets/Keshav Prajapati.pdf"
-          download
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Download resume"
-          className="hidden relative lg:inline-block px-4 py-2 font-medium group"
-        >
-          <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
-          <span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
-          <span className="relative text-black group-hover:text-white flex items-center gap-x-3">
-            Resume <TbDownload size={16} />
-          </span>
-        </motion.a>
+        <div className="flex items-center gap-x-3 lg:gap-x-5 ml-auto lg:ml-0">
+          <motion.a
+            href="/assets/Keshav Prajapati.pdf"
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download resume"
+            className="relative inline-block px-3 py-1.5 lg:px-4 lg:py-2 text-sm lg:text-base font-medium group"
+          >
+            <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+            <span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
+            <span className="relative text-black group-hover:text-white flex items-center gap-x-2 lg:gap-x-3">
+              Resume <TbDownload className="w-4 h-4" />
+            </span>
+          </motion.a>
 
-        <motion.button
-          className="lg:hidden text-2xl"
-          onClick={() => setIsOpen(!isOpen)}
-          whileHover={{ scale: 1.2 }}
-        >
-          {isOpen ? <HiX /> : <HiOutlineMenu />}
-        </motion.button>
+          <motion.button
+            className="lg:hidden text-2xl"
+            onClick={() => setIsOpen(!isOpen)}
+            whileHover={{ scale: 1.2 }}
+          >
+            {isOpen ? <HiX /> : <HiOutlineMenu />}
+          </motion.button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -115,21 +117,6 @@ export default function Navbar() {
                   </button>
                 </motion.li>
               ))}
-              <motion.a
-                href="/assets/Keshav Prajapati.pdf"
-                download
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Download resume"
-                className="relative inline-block px-4 py-2 font-semibold group"
-                whileHover={{ scale: 1.1 }}
-              >
-                <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
-                <span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
-                <span className="relative text-black group-hover:text-white flex items-center gap-x-3">
-                  Resume <TbDownload size={16} />
-                </span>
-              </motion.a>
             </ul>
           </motion.div>
         )}
