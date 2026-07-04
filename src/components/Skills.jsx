@@ -21,6 +21,19 @@ export default function Skills() {
 
   const [experiences] = useState([
     {
+      id: 3,
+      company: "Zenup Health - Mumbai, India",
+      role: "Software Development Engineering Intern",
+      period: "Feb 2026 – May 2026",
+      responsibilities: [
+        "Designed and built an in-house CRM with Leads and Clients modules featuring pipeline tracking, message templates, and audit history, and led migration of business data from legacy platform Kylas with zero data loss.",
+        "Modernized UI/UX across the company's websites and built advanced search functionality (multi-filter, debounced queries) for the React-based booking platform, boosting frontend performance and improving load times.",
+        "Developed a secure in-app chat feature that unlocked customer-expert communication only after booking confirmation, integrated with AI-based moderation to flag suspicious conversations and prevent off-platform customer leakage.",
+        "Architected an asynchronous WhatsApp message queueing system using Interakt and Supabase Edge Functions to ensure reliable delivery and prevent duplicate messages."
+      ],
+      logo: "",
+    },
+    {
       id: 1,
       company: "Don Bosco Institute of Technology – Mumbai, India",
       role: "IT Department Website Coordinator",

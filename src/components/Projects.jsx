@@ -6,7 +6,7 @@ const projects = [
   {
     id: 1,
     title: "Farmer Sahayak — Gov Scheme Discovery",
-    description: "MERN full‑stack platform with an AI RAG chatbot to discover government schemes and provide personalized recommendations.",
+    description: "A comprehensive MERN stack application designed to help farmers access government schemes, get instant support through an AI-powered chatbot, and manage their profiles efficiently.",
     image: "/assets/FarmerSahayak.png",
     link: "https://farm-scheme-delta.vercel.app/"
   },
@@ -16,6 +16,20 @@ const projects = [
     description: "2D platformer built in Unity (C#) with modular systems, A* enemy pathfinding and Android optimizations for smooth 60 FPS gameplay.",
     image: "/assets/LeapQuest3.png",
     link: "https://play.google.com/store/apps/details?id=com.Teknack.LeapQuest&pcampaignid=web_share"
+  },
+  {
+    id: 3,
+    title: "GoCart",
+    description: "A full-stack multi-vendor e-commerce marketplace built with Next.js 15, featuring seller storefronts, Stripe payments, admin controls, real-time order tracking, and role-based access.",
+    image: "/assets/gocart.png",
+    link: "https://gocart-pi-seven.vercel.app/"
+  },
+  {
+    id: 4,
+    title: "CureOS — Hospital Information System",
+    description: "A modular, production-ready clinical operations platform built with Next.js + TypeScript, featuring role-based dashboards, RBAC, and real-time updates.",
+    image: "/assets/cureos.png",
+    link: "https://cure-os-lac.vercel.app/"
   }
 ];
 
