@@ -72,7 +72,7 @@ export default function Navbar() {
         </ul>
 
         <motion.a
-          href="/assets/Keshav Prajapati.pdf"
+          href="/assets/Keshav Prajapati - Resume.pdf"
           download
           target="_blank"
           rel="noopener noreferrer"
