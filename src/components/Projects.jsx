@@ -30,6 +30,13 @@ const projects = [
     description: "A modular, production-ready clinical operations platform built with Next.js + TypeScript, featuring role-based dashboards, RBAC, and real-time updates.",
     image: "/assets/cureos.png",
     link: "https://cure-os-lac.vercel.app/"
+  },
+  {
+    id: 5,
+    title: "Churnshield — AI Churn Prediction",
+    description: "Built an AI-powered churn prediction platform using XGBoost and SHAP to identify at-risk customers and generate explainable, actionable retention strategies for e-commerce businesses.",
+    image: "/assets/Churnshield.png",
+    link: "#"
   }
 ];
 
