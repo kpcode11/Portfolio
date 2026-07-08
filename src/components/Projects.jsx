@@ -36,7 +36,7 @@ const projects = [
     title: "Churnshield — AI Churn Prediction",
     description: "Built an AI-powered churn prediction platform using XGBoost and SHAP to identify at-risk customers and generate explainable, actionable retention strategies for e-commerce businesses.",
     image: "/assets/Churnshield.png",
-    link: "#"
+    link: "https://churn-shield-nine.vercel.app/"
   }
 ];
 
