@@ -57,13 +57,13 @@ export default function Projects() {
             transition={{ type: "spring", stiffness: 80, damping: 10, delay: index * 0.2 }}
             viewport={{ once: true }}
           >
-            <div className="lg:w-[500px] w-full rounded-2xl overflow-hidden">
+            <a href={project.link} target="_blank" rel="noopener noreferrer" className="lg:w-[500px] w-full rounded-2xl overflow-hidden block">
               <img
                 className="w-full h-full hover:scale-105 transition-all duration-500 cursor-pointer object-cover"
                 src={project.image}
                 alt={project.title}
               />
-            </div>
+            </a>
 
             <div className="lg:w-1/2 lg:space-y-6 space-y-4">
               <h2 className="font-extrabold text-white mt-5 lg:mt-0 text-3xl lg:text-5xl">

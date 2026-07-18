@@ -22,38 +22,36 @@ export default function Skills() {
   const [experiences] = useState([
     {
       id: 3,
-      company: "Zenup Health - Mumbai, India",
+      company: "Zenup Health - Malad, Mumbai",
       role: "Software Development Engineering Intern",
       period: "Feb 2026 – May 2026",
       responsibilities: [
-        "Designed and built an in-house CRM with Leads and Clients modules featuring pipeline tracking, message templates, and audit history, and led migration of business data from legacy platform Kylas with zero data loss.",
-        "Modernized UI/UX across the company's websites and built advanced search functionality (multi-filter, debounced queries) for the React-based booking platform, boosting frontend performance and improving load times.",
-        "Developed a secure in-app chat feature that unlocked customer-expert communication only after booking confirmation, integrated with AI-based moderation to flag suspicious conversations and prevent off-platform customer leakage.",
-        "Architected an asynchronous WhatsApp message queueing system using Interakt and Supabase Edge Functions to ensure reliable delivery and prevent duplicate messages."
+        "Constructed full-stack CRM enabling pipeline tracking; migrated 30,000+ records from legacy platforms with 100% data integrity",
+        "Overhauled React booking UI and built a debounced search engine, accelerating frontend load times by 35%",
+        "Created secure, post-booking in-app chat with AI-based moderation to flag suspicious conversations and prevent customer leakage",
+        "Designed an async WhatsApp message queueing system using Interakt and Supabase to ensure reliable delivery"
       ],
       logo: "",
     },
     {
       id: 1,
-      company: "Don Bosco Institute of Technology – Mumbai, India",
+      company: "Don Bosco Institute of Technology - Mumbai, India",
       role: "IT Department Website Coordinator",
       period: "Jul 2025 – Present",
       responsibilities: [
-        "Executed weekly content updates and performed bi-weekly functionality audits for the official IT department website",
-        "Streamlined faculty collaboration processes, reducing content approval time by 40%",
-        "Boosted website performance through systematic optimization, achieving 25% faster load times",
+        "Managed official IT website operations and audits, ensuring 99.9% uptime and reducing content approval time by 40%",
+        "Boosted website performance via systematic optimization, achieving 25% faster load times",
       ],
       logo: "", // add a logo path in /public/assets if you have one
     },
     {
       id: 2,
-      company: "L&T and Creast Collaboration – Mumbai, India",
+      company: "L&T and Creast Collaboration - Mumbai, India",
       role: "Python Instructor Intern",
       period: "Aug 2024 – Feb 2025",
       responsibilities: [
-        "Instructed 50+ students in Python fundamentals, OOP concepts, and hands-on project development",
-        "Orchestrated 3 coding exhibitions and competitions, increasing student participation by 60%",
-        "Designed curriculum modules and generated bi-weekly progress reports, improving learning retention by 35%",
+        "Instructed 50+ students in Python and OOP; generated progress reports that improved learning retention by 35%",
+        "Orchestrated 3 coding exhibitions and competitions, driving student participation up by 60%",
       ],
       logo: "",
     },
@@ -93,7 +91,7 @@ export default function Skills() {
       </div>
 
       {/* Experience Section */}
-      <div className="bg-black w-full my-8 py-8 lg:my-16 lg:py-16">
+      <div id="experience" className="bg-black w-full my-8 py-8 lg:my-16 lg:py-16">
         <motion.h2
           className="text-2xl lg:text-4xl text-center text-white"
           initial={{ opacity: 0, y: -20 }}
