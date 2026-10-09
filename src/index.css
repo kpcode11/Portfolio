@@ -26,20 +26,18 @@ html.has-custom-cursor [contenteditable="true"] {
 .custom-cursor {
   width: var(--cursor-size);
   height: var(--cursor-size);
-  background: #ffffff;
+  background-color: #000000;
   border-radius: 9999px;
-  mix-blend-mode: difference;
   pointer-events: none;
   border: 1.5px solid transparent;
   will-change: transform, opacity;
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-  transition: background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
+  transition: border-color 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
 }
 
 /* pointer-like appearance for links/buttons */
 html.has-custom-cursor-pointer .custom-cursor {
-  background: transparent;
-  border-color: #ffffff;
+  border-color: transparent;
   box-shadow: none;
 }
 
