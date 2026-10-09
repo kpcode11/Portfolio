@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { motion, useMotionValue, useSpring, useReducedMotion } from "framer-motion";
 
 export default function CustomCursor() {
@@ -8,13 +8,13 @@ export default function CustomCursor() {
   const y = useMotionValue(-100);
   const scale = useMotionValue(1);
   const opacity = useMotionValue(1);
-  const color = useMotionValue("#000000");
   const SIZE = 32;
   const sizeRef = useRef(SIZE);
 
   // skip custom cursor on touch / coarse-pointer devices
   const isTouchDevice =
     typeof window !== "undefined" && ("ontouchstart" in window || (window.matchMedia && window.matchMedia("(pointer: coarse)").matches));
+  if (isTouchDevice) return null;
 
   // smooth springs (reduced-motion falls back to very stiff springs)
   const springConfig = prefersReducedMotion ? { stiffness: 1000, damping: 100 } : { stiffness: 500, damping: 30, mass: 0.5 };
@@ -32,27 +32,6 @@ export default function CustomCursor() {
     const textInputSelector = 'input:not([type="submit"]):not([type="button"]):not([type="radio"]):not([type="checkbox"]), textarea, [contenteditable="true"]';
 
     let isPointer = false;
-    const updateColor = (target) => {
-      let element = target;
-      let backgroundColor = "rgba(0, 0, 0, 0)";
-
-      while (element && element !== document.documentElement) {
-        backgroundColor = window.getComputedStyle(element).backgroundColor;
-        if (backgroundColor !== "rgba(0, 0, 0, 0)") break;
-        element = element.parentElement;
-      }
-
-      const channels = backgroundColor.match(/\d+(?:\.\d+)?/g);
-      if (!channels || channels.length < 3 || (channels.length === 4 && Number(channels[3]) === 0)) {
-        color.set("#000000");
-        return;
-      }
-
-      const [red, green, blue] = channels.map(Number);
-      const luminance = (0.299 * red + 0.587 * green + 0.114 * blue) / 255;
-      color.set(luminance < 0.55 ? "#ffffff" : "#000000");
-    };
-
     const setPointerClass = (shouldAdd) => {
       if (shouldAdd && !isPointer) {
         document.documentElement.classList.add("has-custom-cursor-pointer");
@@ -67,7 +46,6 @@ export default function CustomCursor() {
       // position using transform (GPU-accelerated)
       x.set(e.clientX - sizeRef.current / 2);
       y.set(e.clientY - sizeRef.current / 2);
-      updateColor(e.target);
 
       const el = e.target.closest ? e.target.closest(interactiveSelector) : null;
       const textEl = e.target.closest ? e.target.closest(textInputSelector) : null;
@@ -111,18 +89,15 @@ export default function CustomCursor() {
       document.documentElement.classList.remove("has-custom-cursor");
       document.documentElement.classList.remove("has-custom-cursor-pointer");
     };
-  }, [x, y, scale, opacity, color, isTouchDevice, prefersReducedMotion]);
-
-  if (isTouchDevice) return null;
+  }, [x, y, scale, opacity, isTouchDevice, prefersReducedMotion]);
 
   return (
     <motion.div
-      className="custom-cursor fixed pointer-events-none rounded-full z-50"
+      className="custom-cursor fixed pointer-events-none rounded-full z-50 mix-blend-difference"
       style={{
         x: springX,
         y: springY,
         scale: springScale,
-        backgroundColor: color,
         width: SIZE,
         height: SIZE,
         opacity: opacity,
